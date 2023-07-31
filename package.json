@@ -1,0 +1,45 @@
+{
+  "name": "battlebit.js",
+  "description": "A javascript battlebit community server api client",
+  "version": "0.0.1",
+  "license": "GNU AGPLv3",
+  "keywords": [
+    "battlebit",
+    "api",
+    "client",
+    "server",
+    "community"
+  ],
+  "bugs": {
+    "url": "https://github.com/battlebitjs/battlebit.js/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/battlebitjs/battlebit.js.git"
+  },
+  "author": {
+    "name": "Nurdism",
+    "email": "me@nurdism.dev",
+    "url": "https://github.com/nurdism"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "npm run clean && tsc",
+    "prettier": "prettier ./**/*.ts --write",
+    "spelling": "cspell --no-progress ./**/*.ts",
+    "clean": "rimraf ./dist",
+    "deps": "yarn upgrade-interactive --latest"
+  },
+  "packageManager": "yarn@1.22.19",
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.5",
+    "cspell": "^6.31.2",
+    "prettier": "^3.0.0",
+    "rimraf": "^5.0.1",
+    "typescript": "^5.1.6"
+  }
+}

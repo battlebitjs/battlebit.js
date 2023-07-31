@@ -1,0 +1,12 @@
+{
+    "version": "0.2",
+    "language": "en",
+    "words": [],
+    "useGitignore": true,
+    "ignorePaths": [],
+    "ignoreRegExpList": [
+      "/from\\s+(['\"]).*\\1/",
+      "/require\\(+(['\"]).*\\1\\)/"
+    ]
+  }
+  

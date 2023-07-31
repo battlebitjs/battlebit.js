@@ -1,0 +1,11 @@
+{
+    "recommendations": [
+      "esbenp.prettier-vscode",
+      "gruntfuggly.todo-tree",
+      "eamodio.gitlens",
+      "editorconfig.editorconfig",
+      "streetsidesoftware.code-spell-checker",
+      "yoavbls.pretty-ts-errors"
+    ]
+  }
+  

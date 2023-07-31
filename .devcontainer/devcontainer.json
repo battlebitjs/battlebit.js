@@ -1,0 +1,21 @@
+{
+	"name": "battlebit.js",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": { "VARIANT": "18-bullseye" }
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+        "esbenp.prettier-vscode",
+        "gruntfuggly.todo-tree",
+        "eamodio.gitlens",
+        "editorconfig.editorconfig",
+        "streetsidesoftware.code-spell-checker",
+        "yoavbls.pretty-ts-errors"
+			]
+		}
+	},
+  "forwardPorts": [29294],
+  "remoteUser": "node"
+}

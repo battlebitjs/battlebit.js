@@ -1,0 +1,68 @@
+{
+    "files.eol": "\n",
+    "files.encoding": "utf8",
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "search.exclude": {
+      "**/.git": true,
+      "**/node_modules": false,
+    },
+    "todo-tree.filtering.excludeGlobs": ["**/node_modules/**"],
+    "todo-tree.general.tags": ["BUG", "HACK", "FIXME", "TODO", "WIP", "WTF", "CRITICAL", "HELP"],
+    "todo-tree.highlights.customHighlight": {
+      "HELP": {
+        "icon": "question",
+        "iconColour": "#32CD32"
+      },
+      "TODO": {
+        "icon": "verified",
+        "iconColour": "#32CD32"
+      },
+      "WIP": {
+        "icon": "pin",
+        "iconColour": "#32CD32"
+      },
+      "CRITICAL": {
+        "icon": "issue-opened",
+        "iconColour": "#B22222",
+        "type": "text",
+        "foreground": "#FFFFFF",
+        "background": "#B22222"
+      },
+      "WTF": {
+        "icon": "zap",
+        "iconColour": "#B22222",
+        "type": "text",
+        "foreground": "#FFFFFF",
+        "background": "#B22222"
+      },
+      "FIXME": {
+        "icon": "star",
+        "iconColour": "#FFFF00",
+        "type": "text",
+        "foreground": "#000000",
+        "background": "#FFFF00"
+      },
+      "BUG": {
+        "icon": "bug",
+        "iconColour": "#FFFF00",
+        "type": "text",
+        "foreground": "#000000",
+        "background": "#FFFF00"
+      },
+      "HACK": {
+        "icon": "cpu",
+        "iconColour": "#FFFF00",
+        "type": "text",
+        "foreground": "#000000",
+        "background": "#FFFF00"
+      }
+    }
+  }
+  
