@@ -1,0 +1,363 @@
+[
+  {
+    "name": "PlayerConnected",
+    "description": "",
+    "bits": [
+      { "name": "OP_CODE", "type": "INT_8", "value": 50 },
+      { "name": "STEAMID", "type": "U_INT_64_LE" },
+      { "name": "TEAM", "type": "INT_8" },
+      { "name": "SQUAD", "type": "INT_8" },
+      { "name": "ROLE", "type": "INT_8" }
+    ]
+  },
+  {
+    "name": "PlayerDisconnected",
+    "description": "",
+    "bits": [
+      { "name": "OP_CODE", "type": "INT_8", "value": 51 },
+      { "name": "STEAMID", "type": "U_INT_64_LE" }
+    ]
+  },
+  {
+    "name": "PlayerMessage",
+    "description": "",
+    "bits": [
+      { "name": "OP_CODE", "type": "INT_8", "value": 52 },
+      { "name": "STEAMID", "type": "U_INT_64_LE" },
+
+      { "name": "MESSAGE_STR_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "MESSAGE_STR", "type": "U_INT_32_LE[MESSAGE_STR_LENGTH]" }
+    ]
+  },
+  {
+    "name": "PlayerKilledPlayer",
+    "description": "",
+    "bits": [
+      { "name": "OP_CODE", "type": "INT_8", "value": 53 },
+      { "name": "KILLER_STEAMID", "type": "U_INT_64_LE" },
+      { "name": "KILLER_X", "type": "FLOAT_LE" },
+      { "name": "KILLER_Y", "type": "FLOAT_LE" },
+      { "name": "KILLER_Z", "type": "FLOAT_LE" },
+      { "name": "VICTIM_STEAMID", "type": "U_INT_64_LE" },
+      { "name": "VICTIM_X", "type": "FLOAT_LE" },
+      { "name": "VICTIM_Y", "type": "FLOAT_LE" },
+      { "name": "VICTIM_Z", "type": "FLOAT_LE" },
+      { "name": "TOOL_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "TOOL_SRT", "type": "U_INT_32_LE[TOOL_SRT_LENGTH]" }
+    ]
+  },
+  {
+    "name": "PlayerStats",
+    "description": "",
+    "bits": [
+      { "name": "OP_CODE", "type": "INT_8", "value": 11 },
+      { "name": "STEAMID", "type": "U_INT_64_LE" },
+      { "name": "KILL_COUNT", "type": "U_INT_32_LE" },
+      { "name": "LEADER_KILLS", "type": "U_INT_32_LE" },
+      { "name": "ASSAULT_KILLS", "type": "U_INT_32_LE" },
+      { "name": "MEDIC_KILLS", "type": "U_INT_32_LE" },
+      { "name": "ENGINEER_KILLS", "type": "U_INT_32_LE" },
+      { "name": "SUPPORT_KILLS", "type": "U_INT_32_LE" },
+      { "name": "RECON_KILLS", "type": "U_INT_32_LE" },
+      { "name": "DEATH_COUNT", "type": "U_INT_32_LE" },
+      { "name": "WIN_COUNT", "type": "U_INT_32_LE" },
+      { "name": "LOSE_COUNT", "type": "U_INT_32_LE" },
+      { "name": "FRIENDLY_SHOTS", "type": "U_INT_32_LE" },
+      { "name": "FRIENDLY_KILLS", "type": "U_INT_32_LE" },
+      { "name": "REVIVED", "type": "U_INT_32_LE" },
+      { "name": "REVIVED_TEAMMATES", "type": "U_INT_32_LE" },
+      { "name": "ASSISTS", "type": "U_INT_32_LE" },
+      { "name": "PRESTIGE", "type": "U_INT_32_LE" },
+      { "name": "RANK", "type": "U_INT_32_LE" },
+      { "name": "EXP", "type": "U_INT_32_LE" },
+      { "name": "SHOTS_FIRED", "type": "U_INT_32_LE" },
+      { "name": "SHOTS_HIT", "type": "U_INT_32_LE" },
+      { "name": "HEADSHOTS", "type": "U_INT_32_LE" },
+      { "name": "OBJECTIVES_COMPLETED", "type": "U_INT_32_LE" },
+      { "name": "HEALED_HPS", "type": "U_INT_32_LE" },
+      { "name": "ROAD_KILLS", "type": "U_INT_32_LE" },
+      { "name": "SUICIDES", "type": "U_INT_32_LE" },
+      { "name": "VEHICLES_DESTROYED", "type": "U_INT_32_LE" },
+      { "name": "VEHICLE_HP_REPAIRED", "type": "U_INT_32_LE" },
+      { "name": "LONGEST_KILL", "type": "U_INT_32_LE" },
+      { "name": "PLAY_TIME_SECONDS", "type": "U_INT_32_LE" },
+      { "name": "LEADER_PLAY_TIME", "type": "U_INT_32_LE" },
+      { "name": "ASSAULT_PLAY_TIME", "type": "U_INT_32_LE" },
+      { "name": "MEDIC_PLAY_TIME", "type": "U_INT_32_LE" },
+      { "name": "ENGINEER_PLAY_TIME", "type": "U_INT_32_LE" },
+      { "name": "SUPPORT_PLAY_TIME", "type": "U_INT_32_LE" },
+      { "name": "RECON_PLAY_TIME", "type": "U_INT_32_LE" },
+      { "name": "LEADER_SCORE", "type": "U_INT_32_LE" },
+      { "name": "ASSAULT_SCORE", "type": "U_INT_32_LE" },
+      { "name": "MEDIC_SCORE", "type": "U_INT_32_LE" },
+      { "name": "SUPPORT_SCORE", "type": "U_INT_32_LE" },
+      { "name": "ENGINEER_SCORE", "type": "U_INT_32_LE" },
+      { "name": "RECON_Score", "type": "U_INT_32_LE" },
+      { "name": "TOTAL_SCORE", "type": "U_INT_32_LE" }
+    ]
+  },
+  {
+    "name": "PlayerStatsGet",
+    "description": "",
+    "extends": "PlayerStats",
+    "bits": [
+      { "name": "OP_CODE", "type": "INT_8", "value": 54 }
+    ]
+  },
+  {
+    "name": "PlayerStatsSave",
+    "description": "",
+    "extends": "PlayerStats",
+    "bits": [
+      { "name": "OP_CODE", "type": "INT_8", "value": 55 }
+    ]
+  },
+  {
+    "name": "PlayerRoleChangeRequest",
+    "description": "",
+    "bits": [
+      { "name": "OP_CODE", "type": "INT_8", "value": 56 },
+      { "name": "STEAMID", "type": "U_INT_64_LE" },
+      { "name": "ROLE", "type": "INT_8" }
+    ]
+  },
+  {
+    "name": "PlayerRoleChanged",
+    "description": "",
+    "bits": [
+      { "name": "OP_CODE", "type": "INT_8", "value": 57 },
+      { "name": "STEAMID", "type": "U_INT_64_LE" },
+      { "name": "ROLE", "type": "INT_8" }
+    ]
+  },
+  {
+    "name": "PlayerSquadJoined",
+    "description": "",
+    "bits": [
+      { "name": "OP_CODE", "type": "INT_8", "value": 58 },
+      { "name": "STEAMID", "type": "U_INT_64_LE" },
+      { "name": "SQUAD", "type": "INT_8" }
+    ]
+  },
+  {
+    "name": "PlayerSquadLeft",
+    "description": "",
+    "bits": [
+      { "name": "OP_CODE", "type": "INT_8", "value": 59 },
+      { "name": "STEAMID", "type": "U_INT_64_LE" },
+      { "name": "SQUAD", "type": "INT_8" }
+    ]
+  },
+  {
+    "name": "PlayerTeamChanged",
+    "description": "",
+    "bits": [
+      { "name": "OP_CODE", "type": "INT_8", "value": 60 },
+      { "name": "STEAMID", "type": "U_INT_64_LE" },
+      { "name": "TEAM", "type": "INT_8" }
+    ]
+  },
+  {
+    "name": "PlayerSpawnRequest",
+    "description": "",
+    "bits": [
+      { "name": "OP_CODE", "type": "INT_8", "value": 61 },
+      { "name": "STEAMID", "type": "U_INT_64_LE" },
+      { "name": "REQUESTED_POINT", "type": "INT_8" }
+    ]
+  },
+  {
+    "name": "PlayerSpawn",
+    "description": "",
+    "bits": [
+      { "name": "OP_CODE", "type": "INT_8", "value": 12 },
+      { "name": "STEAMID", "type": "U_INT_64_LE" },
+      
+      { "name": "PRIMARY_TOOL_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "PRIMARY_TOOL_SRT", "type": "U_INT_32_LE[PRIMARY_TOOL_SRT_LENGTH]" },
+
+      { "name": "PRIMARY_MAIN_SIGHT_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "PRIMARY_MAIN_SIGHT_SRT", "type": "U_INT_32_LE[PRIMARY_MAIN_SIGHT_SRT_LENGTH]" },
+      
+      { "name": "PRIMARY_TOP_SIGHT_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "PRIMARY_TOP_SIGHT_SRT", "type": "U_INT_32_LE[PRIMARY_TOP_SIGHT_SRT_LENGTH]" },
+      
+      { "name": "PRIMARY_CANTED_SIGHT_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "PRIMARY_CANTED_SIGHT_SRT", "type": "U_INT_32_LE[PRIMARY_CANTED_SIGHT_SRT_LENGTH]" },
+      
+      { "name": "PRIMARY_BARREL_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "PRIMARY_BARREL_SRT", "type": "U_INT_32_LE[PRIMARY_BARREL_SRT_LENGTH]" },
+      
+      { "name": "PRIMARY_SIDE_RAIL_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "PRIMARY_SIDE_RAIL_SRT", "type": "U_INT_32_LE[PRIMARY_SIDE_RAIL_SRT_LENGTH]" },
+
+      { "name": "PRIMARY_UNDER_RAIL_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "PRIMARY_UNDER_RAIL_SRT", "type": "U_INT_32_LE[PRIMARY_UNDER_RAIL_SRT_LENGTH]" },
+      
+      { "name": "PRIMARY_BOLT_ACTION_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "PRIMARY_BOLT_ACTION_SRT", "type": "U_INT_32_LE[PRIMARY_BOLT_ACTION_SRT_LENGTH]" },
+
+      { "name": "PRIMARY_SKIN_INDEX", "type": "INT_8" },
+      { "name": "PRIMARY_MAGAZINE_INDEX", "type": "INT_8" },
+
+      { "name": "SECONDARY_TOOL_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "SECONDARY_TOOL_SRT", "type": "U_INT_32_LE[SECONDARY_TOOL_SRT_LENGTH]" },
+
+      { "name": "SECONDARY_MAIN_SIGHT_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "SECONDARY_MAIN_SIGHT_SRT", "type": "U_INT_32_LE[SECONDARY_MAIN_SIGHT_SRT_LENGTH]" },
+      
+      { "name": "SECONDARY_TOP_SIGHT_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "SECONDARY_TOP_SIGHT_SRT", "type": "U_INT_32_LE[SECONDARY_TOP_SIGHT_SRT_LENGTH]" },
+      
+      { "name": "SECONDARY_CANTED_SIGHT_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "SECONDARY_CANTED_SIGHT_SRT", "type": "U_INT_32_LE[SECONDARY_CANTED_SIGHT_SRT_LENGTH]" },
+      
+      { "name": "SECONDARY_BARREL_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "SECONDARY_BARREL_SRT", "type": "U_INT_32_LE[SECONDARY_BARREL_SRT_LENGTH]" },
+      
+      { "name": "SECONDARY_SIDE_RAIL_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "SECONDARY_SIDE_RAIL_SRT", "type": "U_INT_32_LE[SECONDARY_SIDE_RAIL_SRT_LENGTH]" },
+
+      { "name": "SECONDARY_UNDER_RAIL_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "SECONDARY_UNDER_RAIL_SRT", "type": "U_INT_32_LE[SECONDARY_UNDER_RAIL_SRT_LENGTH]" },
+      
+      { "name": "SECONDARY_BOLT_ACTION_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "SECONDARY_BOLT_ACTION_SRT", "type": "U_INT_32_LE[SECONDARY_BOLT_ACTION_SRT_LENGTH]" },
+
+      { "name": "SECONDARY_SKIN_INDEX", "type": "INT_8" },
+      { "name": "SECONDARY_MAGAZINE_INDEX", "type": "INT_8" },
+
+      { "name": "FIRST_AID_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "FIRST_AID_SRT", "type": "U_INT_32_LE[FIRST_AID_SRT_LENGTH]" },
+
+      { "name": "LIGHT_GADGET_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "LIGHT_GADGET_SRT", "type": "U_INT_32_LE[LIGHT_GADGET_SRT_LENGTH]" },
+
+      { "name": "HEAVY_GADGET_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "HEAVY_GADGET_SRT", "type": "U_INT_32_LE[HEAVY_GADGET_SRT_LENGTH]" },
+
+      { "name": "THROWABLE_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "THROWABLE_SRT", "type": "U_INT_32_LE[THROWABLE_SRT_LENGTH]" },
+
+      { "name": "PRIMARY_EXTRA_MAGAZINES", "type": "INT_8" },
+      { "name": "SECONDARY_EXTRA_MAGAZINES", "type": "INT_8" },
+      { "name": "FIRST_AID_EXTRA", "type": "INT_8" },
+      { "name": "LIGHT_GADGET_EXTRA", "type": "INT_8" },
+      { "name": "HEAVY_GADGET_EXTRA", "type": "INT_8" },
+      { "name": "THROWABLE_EXTRA", "type": "INT_8" },
+
+      { "name": "PLAYER_HEAD_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "PLAYER_HEAD_SRT", "type": "U_INT_32_LE[PLAYER_HEAD_SRT_LENGTH]" },
+
+      { "name": "PLAYER_CHEST_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "PLAYER_CHEST_SRT", "type": "U_INT_32_LE[PLAYER_CHEST_SRT_LENGTH]" },
+
+      { "name": "PLAYER_BELT_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "PLAYER_BELT_SRT", "type": "U_INT_32_LE[PLAYER_BELT_SRT_LENGTH]" },
+
+      { "name": "PLAYER_BACKPACK_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "PLAYER_BACKPACK_SRT", "type": "U_INT_32_LE[PLAYER_BACKPACK_SRT_LENGTH]" },
+
+      { "name": "PLAYER_EYE_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "PLAYER_EYE_SRT", "type": "U_INT_32_LE[PLAYER_EYE_SRT_LENGTH]" },
+
+      { "name": "PLAYER_FACE_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "PLAYER_FACE_SRT", "type": "U_INT_32_LE[PLAYER_FACE_SRT_LENGTH]" },
+
+      { "name": "PLAYER_HAIR_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "PLAYER_HAIR_SRT", "type": "U_INT_32_LE[PLAYER_HAIR_SRT_LENGTH]" },
+
+      { "name": "PLAYER_SKIN_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "PLAYER_SKIN_SRT", "type": "U_INT_32_LE[PLAYER_SKIN_SRT_LENGTH]" },
+
+      { "name": "PLAYER_UNIFORM_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "PLAYER_UNIFORM_SRT", "type": "U_INT_32_LE[PLAYER_UNIFORM_SRT_LENGTH]" },
+
+      { "name": "PLAYER_CAMO_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "PLAYER_CAMO_SRT", "type": "U_INT_32_LE[PLAYER_CAMO_SRT_LENGTH]" },
+
+      { "name": "SPAWN_POSITION_X", "type": "FLOAT_LE" },
+      { "name": "SPAWN_POSITION_Y", "type": "FLOAT_LE" },
+      { "name": "SPAWN_POSITION_Z", "type": "FLOAT_LE" },
+
+      { "name": "LOOK_DIRECTION_X", "type": "FLOAT_LE" },
+      { "name": "LOOK_DIRECTION_Y", "type": "FLOAT_LE" },
+      { "name": "LOOK_DIRECTION_Z", "type": "FLOAT_LE" },
+
+      { "name": "SPAWN_STAND", "type": "INT_8" },
+      { "name": "SPAWN_PROTECTION", "type": "FLOAT_LE" }
+    ]
+  },
+
+  {
+    "name": "ServerExecuteCommand",
+    "description": "",
+    "bits": [
+      { "name": "OP_CODE", "type": "INT_8", "value": 10 },
+      { "name": "COMMAND_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "COMMAND_SRT", "type": "U_INT_32_LE[COMMAND_SRT_LENGTH]" }
+    ]
+  },
+
+  {
+    "name": "ServerHail",
+    "description": "",
+    "bits": [
+      { "name": "OP_CODE", "type": "INT_8", "value": 1 },
+      { "name": "PORT", "type": "U_INT_16_LE" },
+      { "name": "PASSWORD_PROTECTED", "type": "INT_8" },
+
+      { "name": "NAME_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "NAME_SRT", "type": "U_INT_32_LE[NAME_SRT_LENGTH]" },
+
+      { "name": "GAMEMODE_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "GAMEMODE_SRT", "type": "U_INT_32_LE[GAMEMODE_SRT_LENGTH]" },
+
+      { "name": "MAP_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "MAP_SRT", "type": "U_INT_32_LE[MAP_SRT_LENGTH]" },
+
+      { "name": "MAP_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "MAP_SRT", "type": "U_INT_32_LE[MAP_SRT_LENGTH]" },
+
+      { "name": "MAP_SIZE", "type": "INT_8" },
+      { "name": "DAY_NIGHT", "type": "INT_8" },
+      { "name": "PLAYER_COUNT", "type": "INT_8" },
+      { "name": "PLAYER_QUEUE", "type": "INT_8" },
+      { "name": "PLAYER_MAX", "type": "INT_8" },
+
+      { "name": "LOADING_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "LOADING_SRT", "type": "U_INT_32_LE[LOADING_SRT_LENGTH]" },
+
+      { "name": "RULES_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "RULES_SRT", "type": "U_INT_32_LE[RULES_SRT_LENGTH]" },
+      
+      { "name": "CLIENT_COUNT", "type": "INT_8" },
+
+      { "name": "CLIENTS", "type": "LOOP[CLIENT_COUNT]", "bits": [
+          { "name": "CLIENT_STEAMID", "type": "U_INT_64_LE" },
+
+          { "name": "CLIENT_NAME_SRT_LENGTH", "type": "U_INT_16_LE" },
+          { "name": "CLIENT_NAME_SRT", "type": "U_INT_32_LE[CLIENT_NAME_SRT_LENGTH]" },
+
+          { "name": "CLIENT_TEAM", "type": "INT_8" },
+          { "name": "CLIENT_SQUAD", "type": "INT_8" },
+          { "name": "CLIENT_ROLE", "type": "INT_8" }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "ServerAccepted",
+    "description": "",
+    "bits": [
+      { "name": "OP_CODE", "type": "INT_8", "value": 2 }
+    ]
+  },
+  {
+    "name": "ServerDenied",
+    "description": "",
+    "bits": [
+      { "name": "OP_CODE", "type": "INT_8", "value": 3 }
+    ]
+  }
+]
