@@ -12,12 +12,12 @@ export class PlayerLoadout {
   public heavyGadgetName: string | null = null
   public throwableName: string | null = null
 
-  public primaryExtraMagazines: number | null = null
-  public secondaryExtraMagazines: number | null = null
-  public firstAidExtra: number | null = null
-  public lightGadgetExtra: number | null = null
-  public heavyGadgetExtra: number | null = null
-  public throwableExtra: number | null = null
+  public primaryExtraMagazines: number = 0
+  public secondaryExtraMagazines: number = 0
+  public firstAidExtra: number = 0
+  public lightGadgetExtra: number = 0
+  public heavyGadgetExtra: number = 0
+  public throwableExtra: number = 0
 
   public get firstAid() {
     return this.firstAidName ? GadgetsMap.get(this.firstAidName) || null : null
