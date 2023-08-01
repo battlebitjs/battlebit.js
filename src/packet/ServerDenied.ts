@@ -1,7 +1,7 @@
-import { Packet } from './Packet'
+import { Packet, OPCODES } from './Packet'
 
 export class ServerDenied extends Packet {
-  public write() {
-    return Buffer.from([3])
+  public toBuffer() {
+    return Buffer.from([OPCODES.ServerDenied])
   }
 }

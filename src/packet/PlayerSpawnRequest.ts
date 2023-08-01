@@ -1,9 +1,9 @@
-import { Packet } from './Packet'
+import { Packet, OPCODES } from './Packet'
 import { PacketReader } from './PacketReader'
 import { PacketWriter } from './PacketWriter'
 
 export class PlayerSpawnRequest extends Packet {
-  public static OPCODE = [61]
+  public static OPCODE = [OPCODES.PlayerSpawnRequest]
 
   public static fromBuffer(buffer: Buffer): PlayerSpawnRequest {
     const reader = new PacketReader(buffer)
@@ -178,8 +178,8 @@ export class PlayerSpawnRequest extends Packet {
     super()
   }
 
-  write() {
-    const writer = new PacketWriter(12)
+  toBuffer() {
+    const writer = new PacketWriter(OPCODES.PlayerSpawn)
 
     writer.writeUInt64(this.steamId)
     writer.writeInt8(this.requestedPoint)

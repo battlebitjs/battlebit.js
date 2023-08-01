@@ -1,10 +1,8 @@
-import { Packet } from './Packet'
+import { Packet, OPCODES } from './Packet'
 import { PacketReader } from './PacketReader'
 
 export class PlayerSquadChange extends Packet {
-  public static OPCODE = [58, 59]
-  // OPCODE 58 - PlayerSquadJoined
-  // OPCODE 59 - PlayerSquadLeft
+  public static OPCODE = [OPCODES.PlayerSquadJoined, OPCODES.PlayerSquadLeft]
 
   public static fromBuffer(buffer: Buffer): PlayerSquadChange {
     const reader = new PacketReader(buffer)
@@ -12,7 +10,7 @@ export class PlayerSquadChange extends Packet {
       throw new TypeError(`Invalid opcode(${reader.opcode}) was expecting ${PlayerSquadChange.OPCODE}`)
     }
 
-    const joined = reader.opcode == 58
+    const joined = reader.opcode == OPCODES.PlayerSquadJoined
     const steamId = reader.readUInt64()
     const squad = reader.readInt8()
 

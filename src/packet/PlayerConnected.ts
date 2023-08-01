@@ -1,8 +1,8 @@
-import { Packet } from './Packet'
+import { Packet, OPCODES } from './Packet'
 import { PacketReader } from './PacketReader'
 
 export class PlayerConnected extends Packet {
-  public static OPCODE = [50]
+  public static OPCODE = [OPCODES.PlayerConnected]
 
   public static fromBuffer(buffer: Buffer): PlayerConnected {
     const reader = new PacketReader(buffer)

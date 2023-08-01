@@ -1,9 +1,9 @@
-import { Packet } from './Packet'
+import { Packet, OPCODES } from './Packet'
 import { PacketReader } from './PacketReader'
 import { PacketWriter } from './PacketWriter'
 
 export class PlayerStats extends Packet {
-  public static OPCODE = [54, 55]
+  public static OPCODE = [OPCODES.PlayerStatsGet, OPCODES.PlayerStatsSave]
   // OPCODE 54 - PlayerStatsGet (expects a PlayerStats return)
   // OPCODE 55 - PlayerStatsSave
 
@@ -13,7 +13,7 @@ export class PlayerStats extends Packet {
       throw new TypeError(`Invalid opcode(${reader.opcode}) was expecting ${PlayerStats.OPCODE}`)
     }
 
-    const save = reader.opcode === 55
+    const save = reader.opcode === OPCODES.PlayerStatsSave
     const steamId = reader.readUInt64()
     const banned = reader.readBool()
     const roles = reader.readUInt64()
@@ -181,8 +181,8 @@ export class PlayerStats extends Packet {
     super()
   }
 
-  write() {
-    const writer = new PacketWriter(11)
+  toBuffer() {
+    const writer = new PacketWriter(OPCODES.PlayerStats)
 
     writer.writeUInt64(this.steamId)
     writer.writeBool(this.banned)

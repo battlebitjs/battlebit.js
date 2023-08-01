@@ -1,7 +1,7 @@
-import { Packet } from './Packet'
+import { Packet, OPCODES } from './Packet'
 
 export class ServerAccepted extends Packet {
-  public write() {
-    return Buffer.from([2])
+  public toBuffer() {
+    return Buffer.from([OPCODES.ServerAccepted])
   }
 }

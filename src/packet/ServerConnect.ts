@@ -1,4 +1,4 @@
-import { Packet } from './Packet'
+import { Packet, OPCODES } from './Packet'
 import { PacketReader } from './PacketReader'
 
 interface Player {
@@ -10,7 +10,7 @@ interface Player {
 }
 
 export class ServerConnect extends Packet {
-  public static OPCODE = [1]
+  public static OPCODE = [OPCODES.ServerConnect]
 
   public static fromBuffer(buffer: Buffer): ServerConnect {
     const reader = new PacketReader(buffer)
