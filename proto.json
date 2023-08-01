@@ -5,6 +5,8 @@
     "bits": [
       { "name": "OPCODE", "type": "U_INT_8", "value": 50 },
       { "name": "STEAMID", "type": "U_INT_64_LE" },
+      { "name": "USERNAME_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "USERNAME", "type": "U_INT_8[USERNAME_LENGTH]" },
       { "name": "TEAM", "type": "U_INT_8" },
       { "name": "SQUAD", "type": "U_INT_8" },
       { "name": "ROLE", "type": "U_INT_8" }
@@ -292,7 +294,7 @@
       { "name": "LOOK_DIRECTION_Y", "type": "FLOAT_LE" },
       { "name": "LOOK_DIRECTION_Z", "type": "FLOAT_LE" },
 
-      { "name": "SPAWN_STAND", "type": "U_INT_8" },
+      { "name": "SPAWN_STANCE", "type": "U_INT_8" },
       { "name": "SPAWN_PROTECTION", "type": "FLOAT_LE" }
     ]
   },
@@ -314,7 +316,7 @@
     ]
   },
   {
-    "name": "ServerHail",
+    "name": "ServerConnect",
     "description": "",
     "bits": [
       { "name": "OPCODE", "type": "U_INT_8", "value": 1 },
@@ -326,9 +328,6 @@
 
       { "name": "GAMEMODE_SRT_LENGTH", "type": "U_INT_16_LE" },
       { "name": "GAMEMODE_SRT", "type": "U_INT_8[GAMEMODE_SRT_LENGTH]" },
-
-      { "name": "MAP_SRT_LENGTH", "type": "U_INT_16_LE" },
-      { "name": "MAP_SRT", "type": "U_INT_8[MAP_SRT_LENGTH]" },
 
       { "name": "MAP_SRT_LENGTH", "type": "U_INT_16_LE" },
       { "name": "MAP_SRT", "type": "U_INT_8[MAP_SRT_LENGTH]" },
@@ -349,8 +348,8 @@
       { "name": "CLIENT", "type": "LOOP[CLIENT_COUNT]", "bits": [
           { "name": "STEAMID", "type": "U_INT_64_LE" },
 
-          { "name": "NAME_SRT_LENGTH", "type": "U_INT_16_LE" },
-          { "name": "NAME_SRT", "type": "U_INT_8[CLIENT_NAME_SRT_LENGTH]" },
+          { "name": "USERNAME_SRT_LENGTH", "type": "U_INT_16_LE" },
+          { "name": "USERNAME_SRT", "type": "U_INT_8[USERNAME_SRT_LENGTH]" },
 
           { "name": "TEAM", "type": "U_INT_8" },
           { "name": "SQUAD", "type": "U_INT_8" },
