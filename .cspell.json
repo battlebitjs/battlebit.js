@@ -1,7 +1,7 @@
 {
   "version": "0.2",
   "language": "en",
-  "words": ["camo", "gamemode", "headshot", "loadout", "steamid"],
+  "words": ["camo", "gamemode", "headshots", "loadout", "steamid"],
   "useGitignore": true,
   "ignorePaths": [],
   "ignoreRegExpList": ["/from\\s+(['\"]).*\\1/", "/require\\(+(['\"]).*\\1\\)/"]
