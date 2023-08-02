@@ -1,12 +1,16 @@
 import { Packet, OPCODES } from './Packet'
 import { PacketReader } from './PacketReader'
+import { PlayerLoadoutObject, readPlayerLoadout } from './PlayerLoadout'
+import { ServerSettingsObject, readServerSettings } from './ServerSettings'
 
-interface Player {
+export interface Player {
   steamId: bigint
   username: string
   team: number
   squad: number
   role: number
+  alive: boolean
+  loadout: PlayerLoadoutObject | null
 }
 
 export class ServerConnect extends Packet {
@@ -33,15 +37,38 @@ export class ServerConnect extends Packet {
     const loadingMessage = reader.readString()
     const rules = reader.readString()
 
-    const size = reader.readInt8()
-    const players: Player[] = []
+    let size = reader.readInt32() // not needed? throw out
 
-    for (let i = 0; i < size; i++) {
+    const settings = readServerSettings(reader)
+
+    size = reader.readInt32() // not needed? throw out
+
+    let count = reader.readInt32()
+    const maps: string[] = []
+    for (let i = 0; i < count; i++) {
+      maps.push(reader.readString())
+    }
+
+    count = reader.readInt32()
+    const gamemodes: string[] = []
+    for (let i = 0; i < count; i++) {
+      gamemodes.push(reader.readString())
+    }
+
+    count = reader.readInt8()
+    const players: Player[] = []
+    for (let i = 0; i < count; i++) {
       const steamId = reader.readUInt64()
       const username = reader.readString()
       const team = reader.readInt8()
       const squad = reader.readInt8()
       const role = reader.readInt8()
+      const alive = reader.readBool()
+
+      let loadout: PlayerLoadoutObject | null = null
+      if (alive) {
+        loadout = readPlayerLoadout(reader)
+      }
 
       players.push({
         steamId,
@@ -49,6 +76,8 @@ export class ServerConnect extends Packet {
         team,
         squad,
         role,
+        alive,
+        loadout,
       })
     }
 
@@ -67,6 +96,9 @@ export class ServerConnect extends Packet {
 
       loadingMessage,
       rules,
+      settings,
+      maps,
+      gamemodes,
       players,
     )
   }
@@ -86,6 +118,10 @@ export class ServerConnect extends Packet {
 
     public loadingMessage: string,
     public rules: string,
+
+    public settings: ServerSettingsObject,
+    public maps: string[],
+    public gamemodes: string[],
     public players: Player[],
   ) {
     super()

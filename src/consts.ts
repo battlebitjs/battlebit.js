@@ -159,12 +159,30 @@ export const WeaponType = {
   Rifle: 'Rifle',
   DMR: 'DMR',
   SniperRifle: 'SniperRifle',
-  LightSupportGun_LSG: 'LightSupportGun_LSG',
-  LightMachineGun_LMG: 'LightMachineGun_LMG',
-  SubmachineGun_SMG: 'SubmachineGun_SMG',
+  LightSupportGunLSG: 'LightSupportGun_LSG',
+  LightMachineGunLMG: 'LightMachineGun_LMG',
+  SubmachineGunSMG: 'SubmachineGun_SMG',
   Pistol: 'Pistol',
   AutoPistol: 'AutoPistol',
   HeavyPistol: 'HeavyPistol',
   Carbine: 'Carbine',
-  PersonalDefenseWeapon_PDW: 'PersonalDefenseWeapon_PDW',
+  PersonalDefenseWeaponPDW: 'PersonalDefenseWeapon_PDW',
 } as const
+
+export type ReportReason = (typeof ReportReason)[keyof typeof ReportReason]
+
+export const ReportReason = {
+  CheatingWallHack: 0,
+  CheatingAimbot: 1,
+  CheatingSpeedhack: 2,
+  RacismDiscriminationText: 3,
+  RacismDiscriminationVoice: 4,
+  SpammingText: 5,
+  SpammingVoice: 6,
+  BadLanguageText: 7,
+  BadLanguageVoice: 8,
+  Griefing: 9,
+  Exploiting: 10,
+  OtherToxicBehavior: 11,
+  UserProfileNamePicture: 12,
+}

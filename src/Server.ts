@@ -3,11 +3,14 @@ import { createServer } from 'net'
 
 import { OPCODES } from './packet/Packet'
 import { PlayerConnected } from './packet/PlayerConnected'
+import { PlayerDeath } from './packet/PlayerDeath'
 import { PlayerDisconnected } from './packet/PlayerDisconnected'
 import { PlayerKilledPlayer } from './packet/PlayerKilledPlayer'
 import { PlayerMessage } from './packet/PlayerMessage'
+import { PlayerReport } from './packet/PlayerReport'
 import { PlayerRoleChange } from './packet/PlayerRoleChange'
-import { PlayerSpawnRequest } from './packet/PlayerSpawnRequest'
+import { PlayerSpawn } from './packet/PlayerSpawn'
+import { PlayerSpawned } from './packet/PlayerSpawned'
 import { PlayerSquadChange } from './packet/PlayerSquadChange'
 import { PlayerStats } from './packet/PlayerStats'
 import { PlayerTeamChanged } from './packet/PlayerTeamChanged'
@@ -15,6 +18,8 @@ import { ServerAccepted } from './packet/ServerAccepted'
 import { ServerCommand } from './packet/ServerCommand'
 import { ServerConnect } from './packet/ServerConnect'
 import { ServerDenied } from './packet/ServerDenied'
+import { ServerGamemodeRotation } from './packet/ServerGamemodeRotation'
+import { ServerMapRotation } from './packet/ServerMapRotation'
 
 export class ServerListener {
   protected _server = createServer(
@@ -75,11 +80,6 @@ export class ServerListener {
     }
   }
 
-  protected async onPlayerSpawn(socket: Socket, packet: PlayerSpawnRequest) {
-    console.log(`[${socket.remoteAddress}:${socket.remotePort}] Player ${packet.steamId} spawning`) // todo
-    socket.write(packet.toBuffer())
-  }
-
   protected async onPlayerSquadChange(socket: Socket, packet: PlayerSquadChange) {
     if (packet.joined) {
       console.log(`[${socket.remoteAddress}:${socket.remotePort}] Player ${packet.steamId} joined squad ${packet.squad}`)
@@ -101,9 +101,34 @@ export class ServerListener {
     console.log(`[${socket.remoteAddress}:${socket.remotePort}] Player ${packet.steamId} changed to team ${packet.team}`)
   }
 
+  protected async onPlayerSpawn(socket: Socket, packet: PlayerSpawn) {
+    console.log(`[${socket.remoteAddress}:${socket.remotePort}] Player ${packet.steamId} spawning`)
+    socket.write(packet.toBuffer())
+  }
+
+  protected async onPlayerSpawned(socket: Socket, packet: PlayerSpawned) {
+    console.log(`[${socket.remoteAddress}:${socket.remotePort}] Player ${packet.steamId} spawned`)
+  }
+
+  protected async onPlayerDeath(socket: Socket, packet: PlayerDeath) {
+    console.log(`[${socket.remoteAddress}:${socket.remotePort}] Player ${packet.steamId} died`)
+  }
+
+  protected async onPlayerReported(socket: Socket, packet: PlayerReport) {
+    console.log(`[${socket.remoteAddress}:${socket.remotePort}] Player ${packet.reporter} reported ${packet.reported} for ${packet.reason}`)
+  }
+
   protected async onServerConnected(socket: Socket, packet: ServerConnect) {
     console.log(`[${socket.remoteAddress}:${socket.remotePort}] Server "${packet.name}" connected`)
     socket.write(new ServerAccepted().toBuffer())
+  }
+
+  protected async onServerGamemodeRotationChanged(socket: Socket, packet: ServerGamemodeRotation) {
+    console.log(`[${socket.remoteAddress}:${socket.remotePort}] Server gamemode rotation changed to ${packet.gamemodes.join(',')}`)
+  }
+
+  protected async onServerMapRotationChanged(socket: Socket, packet: ServerMapRotation) {
+    console.log(`[${socket.remoteAddress}:${socket.remotePort}] Server map rotation changed to ${packet.maps.join(',')}`)
   }
 
   private async _handleConnection(socket: Socket) {
@@ -142,6 +167,24 @@ export class ServerListener {
             break
           case OPCODES.PlayerTeamChanged:
             this.onPlayerTeamChanged(socket, PlayerTeamChanged.fromBuffer(buffer))
+            break
+          case OPCODES.PlayerSpawnRequest:
+            this.onPlayerSpawn(socket, PlayerSpawn.fromBuffer(buffer))
+            break
+          case OPCODES.PlayerSpawned:
+            this.onPlayerSpawned(socket, PlayerSpawned.fromBuffer(buffer))
+            break
+          case OPCODES.PlayerDeath:
+            this.onPlayerDeath(socket, PlayerDeath.fromBuffer(buffer))
+            break
+          case OPCODES.PlayerReport:
+            this.onPlayerReported(socket, PlayerReport.fromBuffer(buffer))
+            break
+          case OPCODES.ServerGamemodeRotationUpdate:
+            this.onServerGamemodeRotationChanged(socket, ServerGamemodeRotation.fromBuffer(buffer))
+            break
+          case OPCODES.ServerMapRotationUpdate:
+            this.onServerMapRotationChanged(socket, ServerMapRotation.fromBuffer(buffer))
             break
           default:
             throw new RangeError(`unknown opcode(${opcode})`)

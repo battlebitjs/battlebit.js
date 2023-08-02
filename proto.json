@@ -1,5 +1,113 @@
 [
   {
+    "name": "Loadout",
+    "description": "",
+    "bits": [
+      { "name": "PRIMARY_TOOL_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "PRIMARY_TOOL_SRT", "type": "U_INT_8[PRIMARY_TOOL_SRT_LENGTH]" },
+
+      { "name": "PRIMARY_MAIN_SIGHT_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "PRIMARY_MAIN_SIGHT_SRT", "type": "U_INT_8[PRIMARY_MAIN_SIGHT_SRT_LENGTH]" },
+      
+      { "name": "PRIMARY_TOP_SIGHT_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "PRIMARY_TOP_SIGHT_SRT", "type": "U_INT_8[PRIMARY_TOP_SIGHT_SRT_LENGTH]" },
+      
+      { "name": "PRIMARY_CANTED_SIGHT_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "PRIMARY_CANTED_SIGHT_SRT", "type": "U_INT_8[PRIMARY_CANTED_SIGHT_SRT_LENGTH]" },
+      
+      { "name": "PRIMARY_BARREL_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "PRIMARY_BARREL_SRT", "type": "U_INT_8[PRIMARY_BARREL_SRT_LENGTH]" },
+      
+      { "name": "PRIMARY_SIDE_RAIL_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "PRIMARY_SIDE_RAIL_SRT", "type": "U_INT_8[PRIMARY_SIDE_RAIL_SRT_LENGTH]" },
+
+      { "name": "PRIMARY_UNDER_RAIL_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "PRIMARY_UNDER_RAIL_SRT", "type": "U_INT_8[PRIMARY_UNDER_RAIL_SRT_LENGTH]" },
+      
+      { "name": "PRIMARY_BOLT_ACTION_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "PRIMARY_BOLT_ACTION_SRT", "type": "U_INT_8[PRIMARY_BOLT_ACTION_SRT_LENGTH]" },
+
+      { "name": "PRIMARY_SKIN_INDEX", "type": "U_INT_8" },
+      { "name": "PRIMARY_MAGAZINE_INDEX", "type": "U_INT_8" },
+
+      { "name": "SECONDARY_TOOL_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "SECONDARY_TOOL_SRT", "type": "U_INT_8[SECONDARY_TOOL_SRT_LENGTH]" },
+
+      { "name": "SECONDARY_MAIN_SIGHT_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "SECONDARY_MAIN_SIGHT_SRT", "type": "U_INT_8[SECONDARY_MAIN_SIGHT_SRT_LENGTH]" },
+      
+      { "name": "SECONDARY_TOP_SIGHT_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "SECONDARY_TOP_SIGHT_SRT", "type": "U_INT_8[SECONDARY_TOP_SIGHT_SRT_LENGTH]" },
+      
+      { "name": "SECONDARY_CANTED_SIGHT_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "SECONDARY_CANTED_SIGHT_SRT", "type": "U_INT_8[SECONDARY_CANTED_SIGHT_SRT_LENGTH]" },
+      
+      { "name": "SECONDARY_BARREL_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "SECONDARY_BARREL_SRT", "type": "U_INT_8[SECONDARY_BARREL_SRT_LENGTH]" },
+      
+      { "name": "SECONDARY_SIDE_RAIL_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "SECONDARY_SIDE_RAIL_SRT", "type": "U_INT_8[SECONDARY_SIDE_RAIL_SRT_LENGTH]" },
+
+      { "name": "SECONDARY_UNDER_RAIL_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "SECONDARY_UNDER_RAIL_SRT", "type": "U_INT_8[SECONDARY_UNDER_RAIL_SRT_LENGTH]" },
+      
+      { "name": "SECONDARY_BOLT_ACTION_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "SECONDARY_BOLT_ACTION_SRT", "type": "U_INT_8[SECONDARY_BOLT_ACTION_SRT_LENGTH]" },
+
+      { "name": "SECONDARY_SKIN_INDEX", "type": "U_INT_8" },
+      { "name": "SECONDARY_MAGAZINE_INDEX", "type": "U_INT_8" },
+
+      { "name": "FIRST_AID_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "FIRST_AID_SRT", "type": "U_INT_8[FIRST_AID_SRT_LENGTH]" },
+
+      { "name": "LIGHT_GADGET_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "LIGHT_GADGET_SRT", "type": "U_INT_8[LIGHT_GADGET_SRT_LENGTH]" },
+
+      { "name": "HEAVY_GADGET_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "HEAVY_GADGET_SRT", "type": "U_INT_8[HEAVY_GADGET_SRT_LENGTH]" },
+
+      { "name": "THROWABLE_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "THROWABLE_SRT", "type": "U_INT_8[THROWABLE_SRT_LENGTH]" },
+
+      { "name": "PRIMARY_EXTRA_MAGAZINES", "type": "U_INT_8" },
+      { "name": "SECONDARY_EXTRA_MAGAZINES", "type": "U_INT_8" },
+      { "name": "FIRST_AID_EXTRA", "type": "U_INT_8" },
+      { "name": "LIGHT_GADGET_EXTRA", "type": "U_INT_8" },
+      { "name": "HEAVY_GADGET_EXTRA", "type": "U_INT_8" },
+      { "name": "THROWABLE_EXTRA", "type": "U_INT_8" },
+
+      { "name": "PLAYER_HEAD_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "PLAYER_HEAD_SRT", "type": "U_INT_8[PLAYER_HEAD_SRT_LENGTH]" },
+
+      { "name": "PLAYER_CHEST_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "PLAYER_CHEST_SRT", "type": "U_INT_8[PLAYER_CHEST_SRT_LENGTH]" },
+
+      { "name": "PLAYER_BELT_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "PLAYER_BELT_SRT", "type": "U_INT_8[PLAYER_BELT_SRT_LENGTH]" },
+
+      { "name": "PLAYER_BACKPACK_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "PLAYER_BACKPACK_SRT", "type": "U_INT_8[PLAYER_BACKPACK_SRT_LENGTH]" },
+
+      { "name": "PLAYER_EYE_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "PLAYER_EYE_SRT", "type": "U_INT_8[PLAYER_EYE_SRT_LENGTH]" },
+
+      { "name": "PLAYER_FACE_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "PLAYER_FACE_SRT", "type": "U_INT_8[PLAYER_FACE_SRT_LENGTH]" },
+
+      { "name": "PLAYER_HAIR_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "PLAYER_HAIR_SRT", "type": "U_INT_8[PLAYER_HAIR_SRT_LENGTH]" },
+
+      { "name": "PLAYER_SKIN_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "PLAYER_SKIN_SRT", "type": "U_INT_8[PLAYER_SKIN_SRT_LENGTH]" },
+
+      { "name": "PLAYER_UNIFORM_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "PLAYER_UNIFORM_SRT", "type": "U_INT_8[PLAYER_UNIFORM_SRT_LENGTH]" },
+
+      { "name": "PLAYER_CAMO_SRT_LENGTH", "type": "U_INT_16_LE" },
+      { "name": "PLAYER_CAMO_SRT", "type": "U_INT_8[PLAYER_CAMO_SRT_LENGTH]" }
+    ]
+  },
+  {
     "name": "PlayerConnected",
     "description": "",
     "bits": [
@@ -183,108 +291,7 @@
       { "name": "STEAMID", "type": "U_INT_64_LE" },
       { "name": "REQUESTED_POINT", "type": "U_INT_8" },
 
-      { "name": "PRIMARY_TOOL_SRT_LENGTH", "type": "U_INT_16_LE" },
-      { "name": "PRIMARY_TOOL_SRT", "type": "U_INT_8[PRIMARY_TOOL_SRT_LENGTH]" },
-
-      { "name": "PRIMARY_MAIN_SIGHT_SRT_LENGTH", "type": "U_INT_16_LE" },
-      { "name": "PRIMARY_MAIN_SIGHT_SRT", "type": "U_INT_8[PRIMARY_MAIN_SIGHT_SRT_LENGTH]" },
-      
-      { "name": "PRIMARY_TOP_SIGHT_SRT_LENGTH", "type": "U_INT_16_LE" },
-      { "name": "PRIMARY_TOP_SIGHT_SRT", "type": "U_INT_8[PRIMARY_TOP_SIGHT_SRT_LENGTH]" },
-      
-      { "name": "PRIMARY_CANTED_SIGHT_SRT_LENGTH", "type": "U_INT_16_LE" },
-      { "name": "PRIMARY_CANTED_SIGHT_SRT", "type": "U_INT_8[PRIMARY_CANTED_SIGHT_SRT_LENGTH]" },
-      
-      { "name": "PRIMARY_BARREL_SRT_LENGTH", "type": "U_INT_16_LE" },
-      { "name": "PRIMARY_BARREL_SRT", "type": "U_INT_8[PRIMARY_BARREL_SRT_LENGTH]" },
-      
-      { "name": "PRIMARY_SIDE_RAIL_SRT_LENGTH", "type": "U_INT_16_LE" },
-      { "name": "PRIMARY_SIDE_RAIL_SRT", "type": "U_INT_8[PRIMARY_SIDE_RAIL_SRT_LENGTH]" },
-
-      { "name": "PRIMARY_UNDER_RAIL_SRT_LENGTH", "type": "U_INT_16_LE" },
-      { "name": "PRIMARY_UNDER_RAIL_SRT", "type": "U_INT_8[PRIMARY_UNDER_RAIL_SRT_LENGTH]" },
-      
-      { "name": "PRIMARY_BOLT_ACTION_SRT_LENGTH", "type": "U_INT_16_LE" },
-      { "name": "PRIMARY_BOLT_ACTION_SRT", "type": "U_INT_8[PRIMARY_BOLT_ACTION_SRT_LENGTH]" },
-
-      { "name": "PRIMARY_SKIN_INDEX", "type": "U_INT_8" },
-      { "name": "PRIMARY_MAGAZINE_INDEX", "type": "U_INT_8" },
-
-      { "name": "SECONDARY_TOOL_SRT_LENGTH", "type": "U_INT_16_LE" },
-      { "name": "SECONDARY_TOOL_SRT", "type": "U_INT_8[SECONDARY_TOOL_SRT_LENGTH]" },
-
-      { "name": "SECONDARY_MAIN_SIGHT_SRT_LENGTH", "type": "U_INT_16_LE" },
-      { "name": "SECONDARY_MAIN_SIGHT_SRT", "type": "U_INT_8[SECONDARY_MAIN_SIGHT_SRT_LENGTH]" },
-      
-      { "name": "SECONDARY_TOP_SIGHT_SRT_LENGTH", "type": "U_INT_16_LE" },
-      { "name": "SECONDARY_TOP_SIGHT_SRT", "type": "U_INT_8[SECONDARY_TOP_SIGHT_SRT_LENGTH]" },
-      
-      { "name": "SECONDARY_CANTED_SIGHT_SRT_LENGTH", "type": "U_INT_16_LE" },
-      { "name": "SECONDARY_CANTED_SIGHT_SRT", "type": "U_INT_8[SECONDARY_CANTED_SIGHT_SRT_LENGTH]" },
-      
-      { "name": "SECONDARY_BARREL_SRT_LENGTH", "type": "U_INT_16_LE" },
-      { "name": "SECONDARY_BARREL_SRT", "type": "U_INT_8[SECONDARY_BARREL_SRT_LENGTH]" },
-      
-      { "name": "SECONDARY_SIDE_RAIL_SRT_LENGTH", "type": "U_INT_16_LE" },
-      { "name": "SECONDARY_SIDE_RAIL_SRT", "type": "U_INT_8[SECONDARY_SIDE_RAIL_SRT_LENGTH]" },
-
-      { "name": "SECONDARY_UNDER_RAIL_SRT_LENGTH", "type": "U_INT_16_LE" },
-      { "name": "SECONDARY_UNDER_RAIL_SRT", "type": "U_INT_8[SECONDARY_UNDER_RAIL_SRT_LENGTH]" },
-      
-      { "name": "SECONDARY_BOLT_ACTION_SRT_LENGTH", "type": "U_INT_16_LE" },
-      { "name": "SECONDARY_BOLT_ACTION_SRT", "type": "U_INT_8[SECONDARY_BOLT_ACTION_SRT_LENGTH]" },
-
-      { "name": "SECONDARY_SKIN_INDEX", "type": "U_INT_8" },
-      { "name": "SECONDARY_MAGAZINE_INDEX", "type": "U_INT_8" },
-
-      { "name": "FIRST_AID_SRT_LENGTH", "type": "U_INT_16_LE" },
-      { "name": "FIRST_AID_SRT", "type": "U_INT_8[FIRST_AID_SRT_LENGTH]" },
-
-      { "name": "LIGHT_GADGET_SRT_LENGTH", "type": "U_INT_16_LE" },
-      { "name": "LIGHT_GADGET_SRT", "type": "U_INT_8[LIGHT_GADGET_SRT_LENGTH]" },
-
-      { "name": "HEAVY_GADGET_SRT_LENGTH", "type": "U_INT_16_LE" },
-      { "name": "HEAVY_GADGET_SRT", "type": "U_INT_8[HEAVY_GADGET_SRT_LENGTH]" },
-
-      { "name": "THROWABLE_SRT_LENGTH", "type": "U_INT_16_LE" },
-      { "name": "THROWABLE_SRT", "type": "U_INT_8[THROWABLE_SRT_LENGTH]" },
-
-      { "name": "PRIMARY_EXTRA_MAGAZINES", "type": "U_INT_8" },
-      { "name": "SECONDARY_EXTRA_MAGAZINES", "type": "U_INT_8" },
-      { "name": "FIRST_AID_EXTRA", "type": "U_INT_8" },
-      { "name": "LIGHT_GADGET_EXTRA", "type": "U_INT_8" },
-      { "name": "HEAVY_GADGET_EXTRA", "type": "U_INT_8" },
-      { "name": "THROWABLE_EXTRA", "type": "U_INT_8" },
-
-      { "name": "PLAYER_HEAD_SRT_LENGTH", "type": "U_INT_16_LE" },
-      { "name": "PLAYER_HEAD_SRT", "type": "U_INT_8[PLAYER_HEAD_SRT_LENGTH]" },
-
-      { "name": "PLAYER_CHEST_SRT_LENGTH", "type": "U_INT_16_LE" },
-      { "name": "PLAYER_CHEST_SRT", "type": "U_INT_8[PLAYER_CHEST_SRT_LENGTH]" },
-
-      { "name": "PLAYER_BELT_SRT_LENGTH", "type": "U_INT_16_LE" },
-      { "name": "PLAYER_BELT_SRT", "type": "U_INT_8[PLAYER_BELT_SRT_LENGTH]" },
-
-      { "name": "PLAYER_BACKPACK_SRT_LENGTH", "type": "U_INT_16_LE" },
-      { "name": "PLAYER_BACKPACK_SRT", "type": "U_INT_8[PLAYER_BACKPACK_SRT_LENGTH]" },
-
-      { "name": "PLAYER_EYE_SRT_LENGTH", "type": "U_INT_16_LE" },
-      { "name": "PLAYER_EYE_SRT", "type": "U_INT_8[PLAYER_EYE_SRT_LENGTH]" },
-
-      { "name": "PLAYER_FACE_SRT_LENGTH", "type": "U_INT_16_LE" },
-      { "name": "PLAYER_FACE_SRT", "type": "U_INT_8[PLAYER_FACE_SRT_LENGTH]" },
-
-      { "name": "PLAYER_HAIR_SRT_LENGTH", "type": "U_INT_16_LE" },
-      { "name": "PLAYER_HAIR_SRT", "type": "U_INT_8[PLAYER_HAIR_SRT_LENGTH]" },
-
-      { "name": "PLAYER_SKIN_SRT_LENGTH", "type": "U_INT_16_LE" },
-      { "name": "PLAYER_SKIN_SRT", "type": "U_INT_8[PLAYER_SKIN_SRT_LENGTH]" },
-
-      { "name": "PLAYER_UNIFORM_SRT_LENGTH", "type": "U_INT_16_LE" },
-      { "name": "PLAYER_UNIFORM_SRT", "type": "U_INT_8[PLAYER_UNIFORM_SRT_LENGTH]" },
-
-      { "name": "PLAYER_CAMO_SRT_LENGTH", "type": "U_INT_16_LE" },
-      { "name": "PLAYER_CAMO_SRT", "type": "U_INT_8[PLAYER_CAMO_SRT_LENGTH]" },
+      { "name": "LOADOUT", "type": "PACKET[Loadout]" },
 
       { "name": "SPAWN_POSITION_X", "type": "FLOAT_LE" },
       { "name": "SPAWN_POSITION_Y", "type": "FLOAT_LE" },
@@ -295,7 +302,9 @@
       { "name": "LOOK_DIRECTION_Z", "type": "FLOAT_LE" },
 
       { "name": "SPAWN_STANCE", "type": "U_INT_8" },
-      { "name": "SPAWN_PROTECTION", "type": "FLOAT_LE" }
+      { "name": "SPAWN_PROTECTION", "type": "FLOAT_LE" },
+      
+      { "name": "VEHICLE_ID", "type": "U_INT_16_LE" }
     ]
   },
   {
@@ -304,6 +313,34 @@
     "extends": "PlayerSpawnRequest",
     "bits": [
       { "name": "OPCODE", "type": "U_INT_8", "value": 12 }
+    ]
+  },
+  {
+    "name": "PlayerSpawned",
+    "description": "",
+    "bits": [
+      { "name": "OPCODE", "type": "U_INT_8", "value": 63 },
+      { "name": "STEAMID", "type": "U_INT_64_LE" },
+      { "name": "LOADOUT", "type": "PACKET[Loadout]" }
+    ]
+  },
+  {
+    "name": "PlayerDeath",
+    "description": "",
+    "bits": [
+      { "name": "OPCODE", "type": "U_INT_8", "value": 64 },
+      { "name": "STEAMID", "type": "U_INT_64_LE" }
+    ]
+  },
+  {
+    "name": "PlayerReport",
+    "description": "",
+    "extends": "PlayerSpawnRequest",
+    "bits": [
+      { "name": "OPCODE", "type": "U_INT_8", "value": 62 },
+      { "name": "REPORTER", "type": "U_INT_64_LE" },
+      { "name": "REPORTED", "type": "U_INT_64_LE" },
+      { "name": "REASON", "type": "U_INT_8" }
     ]
   },
   {
@@ -344,6 +381,38 @@
       { "name": "RULES_SRT_LENGTH", "type": "U_INT_16_LE" },
       { "name": "RULES_SRT", "type": "U_INT_8[RULES_SRT_LENGTH]" },
       
+      { "name": "ROOM_PACKET_SIZE", "type": "U_INT_32_LE" },
+
+      { "name": "DAMAGE_MULTIPLIER", "type": "FLOAT_LE" },
+      { "name": "BLEEDING_ENABLED", "type": "U_INT_8" },
+      { "name": "STAMINA_ENABLED", "type": "U_INT_8" },
+      { "name": "FRIENDLY_FIRE_ENABLED", "type": "U_INT_8" },
+      { "name": "HIDE_MAP_VOTES", "type": "U_INT_8" },
+      { "name": "ONLY_WINNER_TEAM_CAN_VOTE", "type": "U_INT_8" },
+      { "name": "HIT_MARKERS_ENABLED", "type": "U_INT_8" },
+      { "name": "POINT_LOG_ENABLED", "type": "U_INT_8" },
+      { "name": "SPECTATOR_ENABLED", "type": "U_INT_8" },
+      { "name": "SQUAD_MEDIC_LIMIT", "type": "U_INT_8" },
+      { "name": "SQUAD_ENGINEER_LIMIT", "type": "U_INT_8" },
+      { "name": "SQUAD_SUPPORT_LIMIT", "type": "U_INT_8" },
+      { "name": "SQUAD_RECON_LIMIT", "type": "U_INT_8" },
+
+      { "name": "ROTATION_PACKET_SIZE", "type": "U_INT_32_LE" },
+
+      { "name": "MAP_COUNT", "type": "U_INT_32_LE" },
+      { "name": "MAP", "type": "LOOP[MAP_COUNT]", "bits": [
+          { "name": "STR_SIZE", "type": "U_INT_16_LE" },
+          { "name": "STR", "type": "U_INT_8[STR_SIZE]" }
+        ]
+      },
+
+      { "name": "GAMEMODE_COUNT", "type": "U_INT_32_LE" },
+      { "name": "GAMEMODE", "type": "LOOP[GAMEMODE_COUNT]", "bits": [
+        { "name": "STR_SIZE", "type": "U_INT_16_LE" },
+        { "name": "STR", "type": "U_INT_8[STR_SIZE]" }
+        ]
+      },
+
       { "name": "CLIENT_COUNT", "type": "U_INT_8" },
       { "name": "CLIENT", "type": "LOOP[CLIENT_COUNT]", "bits": [
           { "name": "STEAMID", "type": "U_INT_64_LE" },
@@ -353,7 +422,14 @@
 
           { "name": "TEAM", "type": "U_INT_8" },
           { "name": "SQUAD", "type": "U_INT_8" },
-          { "name": "ROLE", "type": "U_INT_8" }
+          { "name": "ROLE", "type": "U_INT_8" },
+          { "name": "ALIVE", "type": "U_INT_8" },
+          
+          { "name": "LOADOUT", "type": "CONDITIONAL[ALIVE == 1]", "bits": [
+              { "name": "PACKET_SIZE", "type": "U_INT_32", "conditional": "" },
+              { "name": "LOADOUT", "type": "PACKET[Loadout]" }
+            ]
+          }
         ]
       }
     ]
@@ -370,6 +446,32 @@
     "description": "",
     "bits": [
       { "name": "OPCODE", "type": "U_INT_8", "value": 3 }
+    ]
+  },
+  {
+    "name": "ServerMapRotationUpdate",
+    "description": "",
+    "bits": [
+      { "name": "OPCODE", "type": "U_INT_8", "value": 65 },
+      { "name": "MAP_COUNT", "type": "U_INT_32_LE" },
+      { "name": "MAP", "type": "LOOP[MAP_COUNT]", "bits": [
+        { "name": "STR_SIZE", "type": "U_INT_16_LE" },
+        { "name": "STR", "type": "U_INT_8[STR_SIZE]" }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "ServerGamemodeRotationUpdate",
+    "description": "",
+    "bits": [
+      { "name": "OPCODE", "type": "U_INT_8", "value": 65 },
+      { "name": "GAMEMODE_COUNT", "type": "U_INT_32_LE" },
+      { "name": "GAMEMODE", "type": "LOOP[GAMEMODE_COUNT]", "bits": [
+        { "name": "STR_SIZE", "type": "U_INT_16_LE" },
+        { "name": "STR", "type": "U_INT_8[STR_SIZE]" }
+        ]
+      }
     ]
   }
 ]
